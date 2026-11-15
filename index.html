@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Агентство по выгулу драконов</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e57);
+        }
+        header {
+            background: linear-gradient(225deg, #ff8e57, #ff6b6b);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        footer {
+            background: linear-gradient(225deg, #ff6b6b, #ff8e57);
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+        }
+        .card {
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 20px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            width: calc(25% - 20px);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+            }
+        }
+        #petBtn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            background: #ff4757;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255,71,87,0.4);
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Агентство по выгулу драконов</h1>
+    </header>
+    <main>
+        <div class="card">
+            <div style="font-size:5em; margin:10px 0;">🐉</div>
+            <h2>Ученический дракон</h2>
+            <p>Для начинающих драконов</p>
+        </div>
+        <div class="card">
+            <div style="font-size:5em; margin:10px 0;">🐲</div>
+            <h2>Китайский дракон</h2>
+            <p>Летающий дракон</p>
+        </div>
+        <div class="card">
+            <div style="font-size:5em; margin:10px 0;">🦕</div>
+            <h2>Древний дракон</h2>
+            <p>Исторический дракон</p>
+        </div>
+        <div class="card">
+            <div style="font-size:5em; margin:10px 0;">🦖</div>
+            <h2>Боевой дракон</h2>
+            <p>Сильный и мощный</p>
+        </div>
+    </main>
+    <footer>
+        <p>© 2023 Агентство по выгулу драконов. Все права защищены.</p>
+    </footer>
+    <button id="petBtn">Погладить дракона 🐉</button>
+    <script>
+        const btn = document.getElementById('petBtn');
+        btn.addEventListener('mouseover', () => {
+            const maxX = window.innerWidth - btn.offsetWidth;
+            const maxY = window.innerHeight - btn.offsetHeight;
+            btn.style.left = Math.floor(Math.random() * maxX) + 'px';
+            btn.style.top = Math.floor(Math.random() * maxY) + 'px';
+            btn.style.right = 'auto';
+            btn.style.bottom = 'auto';
+        });
+    </script>
+</body>
+</html>
